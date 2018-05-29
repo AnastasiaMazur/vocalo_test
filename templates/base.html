@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+    <title>{% block title %}{% endblock %} - Vocalo Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <h1>Vocalo Test</h1>
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+</html>
